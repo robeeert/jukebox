@@ -1,14 +1,16 @@
 var Mopidy = require('mopidy');
 
 var mopidy = new Mopidy({
-    webSocketUrl: "ws://localhost:6680/mopidy/ws/"
+    webSocketUrl: "ws://192.168.2.106:6680/mopidy/ws/"
 });
 
 
 mopidy.on("state:online", function () {
-    mopidy.playback.next();
-mopidy.playback.getCurrentTrack()
-    .done(printCurrentTrack);
+
+    mopidy.playlists.lookup('spotify:user:126388824:playlist:0DTRXkqYrmvt6lHm3eKX2t').done(test=>console.log(test))
+
+    mopidy.playback.getCurrentTrack()
+        .done(printCurrentTrack);
 });
 
 var printCurrentTrack = function (track) {
