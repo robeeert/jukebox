@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/robeeert/jukebox/issues"
   },
-  "homepage": "https://github.com/robeeert/jukebox#readme"
+  "homepage": "https://github.com/robeeert/jukebox#readme",
+  "dependencies": {
+    "mopidy": "^0.5.0"
+  }
 }

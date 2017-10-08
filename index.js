@@ -1,6 +1,21 @@
-const http = require('http');
+var Mopidy = require('mopidy');
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('okay');
-}).listen(30);
+var mopidy = new Mopidy({
+    webSocketUrl: "ws://localhost:6680/mopidy/ws/"
+});
+
+
+mopidy.on("state:online", function () {
+    mopidy.playback.next();
+mopidy.playback.getCurrentTrack()
+    .done(printCurrentTrack);
+});
+
+var printCurrentTrack = function (track) {
+    if (track) {
+        console.log("Currently playing:", track.name, "by",
+            track.artists[0].name, "from", track.album.name);
+    } else {
+        console.log("No current track");
+    }
+};
