@@ -32,6 +32,7 @@ device.on("data", function(data) {
     test(combinedData);
     combinedData = '';
   } else {
+<<<<<<< HEAD
     combinedData += parsedData;
   }
 });
@@ -82,3 +83,12 @@ var printCurrentTrack = function (track) {
         console.log("No current track");
     }
 };
+=======
+    combinedData + parsedData;
+  }
+});
+
+function test(combinedData) {
+  console.log(combinedData);
+}
+>>>>>>> 5b57e4b75986f5fc3109983e64e1f1f8881b8651
