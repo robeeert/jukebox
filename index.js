@@ -6,11 +6,6 @@ var mopidy = new Mopidy({
 
 mopidy.on("state:online", function () {
 
-    // console.log(mopidy.tracklist.add)
-
-    // mopidy.tracklist.add([{'uri': 'spotify:track:2gmHWTVT3M598AfBmMD59k'}]);
-    // mopidy.playlists.getPlaylists().then(pl=>console.log(pl))
-
     console.log("pre lookup")
     mopidy.library.lookup('spotify:user:126388824:playlist:0DTRXkqYrmvt6lHm3eKX2t')
         .then(printTypeAndName)
@@ -22,11 +17,6 @@ mopidy.on("state:online", function () {
         .catch(console.error.bind(console))
         .done();
 
-    // console.log("past lookup")
-    // mopidy.tracklist.nextTrack().done(test=>console.log(1,"nexttrack"))
-
-    mopidy.playback.getCurrentTrack()
-        .done(printCurrentTrack);
 });
 
 var get = function (key, object) {
