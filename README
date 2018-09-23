@@ -1,0 +1,5 @@
+setup raspberry pi with raspbian
+config
+enable ssh
+install node 7.9.0
+install mopidy
