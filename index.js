@@ -15,8 +15,8 @@ mopidy.on("state:online", function () {
     console.log("pre lookup")
     mopidy.library.lookup('spotify:user:126388824:playlist:0DTRXkqYrmvt6lHm3eKX2t').done(test=>mopidy.tracklist.add(test.tracks))
 
-    console.log("past lookup")
-    // mopidy.tracklist.nextTrack().done(test=>console.log(test))
+    // console.log("past lookup")
+    mopidy.tracklist.nextTrack().done(test=>console.log(1,test))
 
     mopidy.playback.getCurrentTrack()
         .done(printCurrentTrack);
