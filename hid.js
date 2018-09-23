@@ -3,7 +3,7 @@ var HID = require('node-hid');
 var Mopidy = require('mopidy');
 
 var mopidy = new Mopidy({
-    webSocketUrl: "ws://192.168.0.101:6680/mopidy/ws/"
+    webSocketUrl: "ws://localhost:6680/mopidy/ws/"
 });
 
 console.log("start")

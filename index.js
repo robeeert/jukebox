@@ -7,7 +7,10 @@ var mopidy = new Mopidy({
 
 mopidy.on("state:online", function () {
 	console.log("state:online")
-    mopidy.playlists.lookup('spotify:user:126388824:playlist:0DTRXkqYrmvt6lHm3eKX2t').done(test=>console.log(test))
+    mopidy.playlists.lookup('spotify:user:126388824:playlist:0DTRXkqYrmvt6lHm3eKX2t').done(test=>{
+        console.log("add playlist")
+        mopidy.tracklist.add(test.tracks)
+    })
 
     mopidy.playback.getCurrentTrack()
         .done(printCurrentTrack);
