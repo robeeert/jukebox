@@ -16,7 +16,7 @@ mopidy.on("state:online", function () {
         .then(printTypeAndName)
         .fold(get, 'tracks')
         .then(mopidy.tracklist.add)
-        .fold(get, trackNum)
+        .fold(get, 0)
         .then(mopidy.playback.play)
         .then(printNowPlaying)
         .catch(console.error.bind(console))
@@ -28,6 +28,10 @@ mopidy.on("state:online", function () {
     mopidy.playback.getCurrentTrack()
         .done(printCurrentTrack);
 });
+
+var get = function (key, object) {
+    return object[key];
+};
 
 var printTypeAndName = function (model) {
     console.log(model.__model__ + ": " + model.name);
