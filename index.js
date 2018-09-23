@@ -19,7 +19,7 @@ mopidy.on("state:online", function () {
     })
 
     // console.log("past lookup")
-    mopidy.tracklist.nextTrack().done(test=>console.log(1,"nexttrack"))
+    // mopidy.tracklist.nextTrack().done(test=>console.log(1,"nexttrack"))
 
     mopidy.playback.getCurrentTrack()
         .done(printCurrentTrack);
