@@ -4,9 +4,6 @@ var mopidy = new Mopidy({
     webSocketUrl: "ws://localhost:6680/mopidy/ws/"
 });
 
-
-mopidy.on(console.log.bind(console));
-
 mopidy.on("state:online", function () {
 
     // console.log(mopidy.tracklist.add)
