@@ -44,8 +44,8 @@ function test(combinedData) {
 		if (data.action === 'playlist') {
 			mopidy.library.lookup(data.payload)
 				.done(tracks => {
-					console.log(tracks.length);
-					mopidy.tracklist.clear().done(test=>console.log(test));
+					console.log("tracks.length:",tracks.length, tracks);
+					mopidy.tracklist.clear().done(test=>console.log("clear tracklist:",test));
 					// tracks.forEach(track => {
 						mopidy.tracklist.add(tracks).done(tracks=>mopidy.playback.play());
 					// });
