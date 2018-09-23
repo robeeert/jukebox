@@ -1,7 +1,7 @@
 var Mopidy = require('mopidy');
 
 var mopidy = new Mopidy({
-    webSocketUrl: "ws://192.168.2.106:6680/mopidy/ws/"
+    webSocketUrl: "ws://192.168.2.119:6680/mopidy/ws/"
 });
 
 
